@@ -41,6 +41,7 @@
 
 
 <script>
+import { setInterval, clearInterval } from 'timers';
 export default {
   data: () => ({
     date: new Date(),
