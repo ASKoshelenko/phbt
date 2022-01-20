@@ -2,11 +2,9 @@ import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './store/old'
 import dateFilter from '@/filters/date.filter'
-import currencyFilter from '@/filters/currency.filter'
 import messagePlugin from '@/utils/message.plugin'
-import Loader from '@/components/app/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min'
 
@@ -19,17 +17,15 @@ Vue.config.productionTip = false
 Vue.use(messagePlugin)
 Vue.use(Vuelidate)
 Vue.filter('date', dateFilter)
-Vue.filter('currency', currencyFilter)
-Vue.component('Loader', Loader)
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCH3QkCas37KNaI8merBalidhw1U5j5o5c",
-  authDomain: "crm-phbt.firebaseapp.com",
-  databaseURL: "https://crm-phbt-default-rtdb.firebaseio.com",
-  projectId: "crm-phbt",
-  storageBucket: "crm-phbt.appspot.com",
-  messagingSenderId: "75996065780",
-  appId: "1:75996065780:web:40ef9195e2efac02c1d3a1"
+  apiKey: "AIzaSyCi-VkUqAD9N7aQd-ufPPErYBFVQT0Qmx4",
+  authDomain: "phbt-crm.firebaseapp.com",
+  projectId: "phbt-crm",
+  storageBucket: "phbt-crm.appspot.com",
+  messagingSenderId: "47157609715",
+  appId: "1:47157609715:web:ad93848941a64e8da26386",
+  measurementId: "G-JTH2014SML"
 })
 
 let app
