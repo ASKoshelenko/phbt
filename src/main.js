@@ -1,10 +1,17 @@
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
+import Paginate from 'vuejs-paginate'
+import VueMeta from 'vue-meta'
 import App from './App.vue'
 import router from './router'
-import store from './store/old'
+import store from './store'
 import dateFilter from '@/filters/date.filter'
+import currencyFilter from '@/filters/currency.filter'
+import localizeFilter from '@/filters/localize.filter'
+import tooltipDirective from '@/directives/tooltip.directive'
 import messagePlugin from '@/utils/message.plugin'
+import titlePlugin from '@/utils/title.plugin'
+import Loader from '@/components/app/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min'
 
@@ -15,17 +22,24 @@ import 'firebase/database'
 Vue.config.productionTip = false
 
 Vue.use(messagePlugin)
+Vue.use(titlePlugin)
 Vue.use(Vuelidate)
+Vue.use(VueMeta)
 Vue.filter('date', dateFilter)
+Vue.filter('localize', localizeFilter)
+Vue.filter('currency', currencyFilter)
+Vue.directive('tooltip', tooltipDirective)
+Vue.component('Loader', Loader)
+Vue.component('Paginate', Paginate)
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCi-VkUqAD9N7aQd-ufPPErYBFVQT0Qmx4",
-  authDomain: "phbt-crm.firebaseapp.com",
-  projectId: "phbt-crm",
-  storageBucket: "phbt-crm.appspot.com",
-  messagingSenderId: "47157609715",
-  appId: "1:47157609715:web:ad93848941a64e8da26386",
-  measurementId: "G-JTH2014SML"
+  apiKey: "AIzaSyCH3QkCas37KNaI8merBalidhw1U5j5o5c",
+  authDomain: "crm-phbt.firebaseapp.com",
+  databaseURL: "https://crm-phbt-default-rtdb.firebaseio.com",
+  projectId: "crm-phbt",
+  storageBucket: "crm-phbt.appspot.com",
+  messagingSenderId: "75996065780",
+  appId: "1:75996065780:web:40ef9195e2efac02c1d3a1"
 })
 
 let app
@@ -39,5 +53,3 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount('#app')
   }
 })
-
-

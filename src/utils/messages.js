@@ -1,3 +1,7 @@
 export default {
-  'logout': 'Вы вышли из системы'
+  logout: 'Logout',
+  login: 'FirstLogin',
+  'auth/user-not-found': 'NoUserWithEmail',
+  'auth/wrong-password': 'WrongPassword',
+  'auth/email-already-in-use': 'EmailInUse'
 }
