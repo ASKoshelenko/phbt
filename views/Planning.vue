@@ -9,7 +9,7 @@
 
     <p class="center" v-else-if="!categories.length">
       {{'NoCategories'|localize}}.
-      <router-link to="/categories">{{'AddFirst'|localize}}</router-link>
+      <router-link to="/clients">{{'AddFirst'|localize}}</router-link>
     </p>
 
     <section v-else>
