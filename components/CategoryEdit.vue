@@ -27,6 +27,22 @@
           >{{'Message_CategoryTitle'|localize}}</span>
         </div>
 
+        <!-- start new test button -->
+        <div class="input-field"> 
+          <input
+            id="cardid"
+            type="number"
+            v-model.number="cardid"
+            :class="{invalid: $v.cardid.$dirty && !$v.cardid.required}"
+          >
+          <label for="cardid">{{'cardid'|localize}}</label>
+          <span
+            v-if="$v.cardid.$dirty && !$v.cardid.required"
+            class="helper-text invalid"
+          >{{'Message_CardID'|localize}}</span>
+        </div>
+        <!-- end new test button -->
+
         <div class="input-field">
           <input
             id="limit"
@@ -63,24 +79,28 @@ export default {
   data: () => ({
     select: null,
     title: '',
+    cardid: '',
     limit: 100,
     current: null
   }),
   validations: {
     title: { required },
+    cardid: { required },
     limit: { minValue: minValue(100) }
   },
   watch: {
     current(catId) {
-      const { title, limit } = this.categories.find(c => c.id === catId)
+      const { title, cardid, limit } = this.categories.find(c => c.id === catId)
       this.title = title
+      this.cardid = cardid
       this.limit = limit
     }
   },
   created() {
-    const { id, title, limit } = this.categories[0]
+    const { id, title, cardid, limit } = this.categories[0]
     this.current = id
     this.title = title
+    this.cardid = cardid
     this.limit = limit
   },
   methods: {
@@ -94,6 +114,7 @@ export default {
         const categoryData = {
           id: this.current,
           title: this.title,
+          cardid: this.cardid,
           limit: this.limit
         }
         await this.$store.dispatch('updateCategory', categoryData)

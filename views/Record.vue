@@ -18,7 +18,6 @@
         </select>
         <label>{{'SelectCategory'|localize}}</label>
       </div>
-
       <p>
         <label>
           <input class="with-gap" name="type" type="radio" value="income" v-model="type">

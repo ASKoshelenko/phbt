@@ -27,10 +27,10 @@ const router = new Router({
       component: () => import('./views/Home.vue')
     },
     {
-      path: '/categories',
-      name: 'categories',
+      path: '/clients',
+      name: 'clients',
       meta: {layout: 'main', auth: true},
-      component: () => import('./views/Categories.vue')
+      component: () => import('./views/Clients.vue')
     },
     {
       path: '/detail/:id',

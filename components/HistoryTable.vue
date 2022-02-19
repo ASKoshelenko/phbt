@@ -5,7 +5,7 @@
         <th>#</th>
         <th>{{'Amount'|localize}}</th>
         <th>{{'Date'|localize}}</th>
-        <th>{{'Category'|localize}}</th>
+        <th>{{'Clients'|localize}}</th>
         <th>{{'Type'|localize}}</th>
         <th>{{'Open'|localize}}</th>
       </tr>
@@ -14,7 +14,7 @@
     <tbody>
       <tr v-for="(record, idx) of records" :key="record.id">
         <td>{{ idx + 1 }}</td>
-        <td>{{ record.amount | currency('RUB') }}</td>
+        <td>{{ record.amount | currency('UAH') }}</td>
         <td>{{ record.date | date('datetime') }}</td>
         <td>{{ record.categoryName }}</td>
         <td>

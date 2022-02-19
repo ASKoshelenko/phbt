@@ -19,7 +19,21 @@
             class="helper-text invalid"
           >{{'Message_CategoryTitle'|localize}}</span>
         </div>
-
+<!-- start new test button -->
+        <div class="input-field"> 
+          <input
+            id="cardid"
+            type="number"
+            v-model.number="cardid"
+            :class="{invalid: $v.cardid.$dirty && !$v.cardid.required}"
+          >
+          <label for="cardid">{{'cardid'|localize}}</label>
+          <span
+            v-if="$v.cardid.$dirty && !$v.cardid.required"
+            class="helper-text invalid"
+          >{{'Message_CardID'|localize}}</span>
+        </div>
+<!-- end new test button -->
         <div class="input-field">
           <input
             id="limit"
@@ -50,11 +64,13 @@ import localizeFilter from '@/filters/localize.filter'
 export default {
   data: () => ({
     title: '',
+    cardid: '',
     limit: 100
   }),
   validations: {
     title: { required },
-    limit: { minValue: minValue(100) }
+    limit: { minValue: minValue(100) },
+    cardid: { required } //new
   },
   mounted() {
     M.updateTextFields()
@@ -69,9 +85,11 @@ export default {
       try {
         const category = await this.$store.dispatch('createCategory', {
           title: this.title,
+          cardid: this.cardid,
           limit: this.limit
         })
         this.title = ''
+        this.cardid = ''
         this.limit = 100
         this.$v.$reset()
         this.$message(localizeFilter('Category_HasBeenCreated'))
