@@ -1,6 +1,9 @@
 # phbt
 ![Login(https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt01.png)
-![Registration](https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt02.png)
+
+![Login(https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt02.png)
+
+
 ## Project setup
 ```
 npm install
