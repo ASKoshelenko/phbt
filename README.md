@@ -1,7 +1,9 @@
-# phbt
+# Login or registration
 ![Login(https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt01.png)
 
-![Login(https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt02.png)
+# Profile info
+
+![Login(https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt03.png)
 
 
 ## Project setup
