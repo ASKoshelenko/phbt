@@ -1,5 +1,5 @@
 # Login or registration
-![Login(https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt01.png)
+![Иллюстрация к проекту](https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt01.png)
 
 ## Project setup
 ```
