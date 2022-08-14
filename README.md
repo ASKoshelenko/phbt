@@ -1,4 +1,5 @@
 # phbt
+![Login and register](https://github.com/ASKoshelenko/phbt/blob/main/Illustration%20phbt/phbt01.png)
 
 ## Project setup
 ```
